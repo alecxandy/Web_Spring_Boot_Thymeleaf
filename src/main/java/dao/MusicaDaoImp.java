@@ -28,7 +28,7 @@ public class MusicaDaoImp implements MusicaDAO {
     public Musica recuperarPorPlaylistIdEMusicaId(long playlistId, long musicaId) {
         return em.createQuery("select m from Musica m where m.playlist.id = :playlistId and m.id = :musicaId", Musica.class)
                 .setParameter("playlistId", playlistId)
-                .setParameter("musicaId", musicaId)
+                        .setParameter("musicaId", musicaId)
                 .getSingleResult();
     }
 
