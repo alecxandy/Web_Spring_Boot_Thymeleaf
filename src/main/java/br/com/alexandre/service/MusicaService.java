@@ -1,6 +1,6 @@
-package service;
+package br.com.alexandre.service;
 
-import domain.Musica;
+import br.com.alexandre.domain.Musica;
 
 import java.util.List;
 

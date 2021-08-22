@@ -1,4 +1,4 @@
-package domain;
+package br.com.alexandre.domain;
 
 import org.hibernate.validator.constraints.Range;
 

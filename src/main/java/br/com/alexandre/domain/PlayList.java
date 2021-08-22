@@ -1,4 +1,4 @@
-package domain;
+package br.com.alexandre.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -24,9 +24,9 @@ public class PlayList {
     public Long getId() {
         return id;
     }
-
+/*
     @OneToMany(mappedBy = "playlist", cascade = CascadeType.ALL)
-    private List<Musica> musicas;
+    private List<Musica> musicas;*/
 
     public void setId(Long id) {
         this.id = id;
@@ -47,6 +47,7 @@ public class PlayList {
     public void setNome(String nome) {
         this.nome = nome;
     }
+/*
 
     public List<Musica> getMusicas() {
         return musicas;
@@ -55,4 +56,5 @@ public class PlayList {
     public void setMusicas(List<Musica> musicas) {
         this.musicas = musicas;
     }
+*/
 }

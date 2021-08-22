@@ -1,7 +1,7 @@
-package service;
+package br.com.alexandre.service;
 
-import dao.PlayListDAO;
-import domain.PlayList;
+import br.com.alexandre.dao.PlayListDAO;
+import br.com.alexandre.domain.PlayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

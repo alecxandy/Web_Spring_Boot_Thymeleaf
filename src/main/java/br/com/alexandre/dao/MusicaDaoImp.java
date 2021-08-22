@@ -1,6 +1,6 @@
-package dao;
+package br.com.alexandre.dao;
 
-import domain.Musica;
+import br.com.alexandre.domain.Musica;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
