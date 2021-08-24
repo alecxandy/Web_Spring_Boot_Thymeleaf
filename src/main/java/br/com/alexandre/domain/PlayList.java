@@ -11,25 +11,34 @@ public class PlayList {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @NotBlank
     @Size(min = 2, max = 60)
     @Column(nullable = false, length = 60)
-    private String descricao;
     private String nome;
 
     @NotBlank
     @Column(nullable = false)
-    public Long getId() {
+    private String descricao;
+
+    @OneToMany(mappedBy = "playlist", cascade = CascadeType.ALL)
+    private List<Musica> musicas;
+
+    public long getId() {
         return id;
     }
-/*
-    @OneToMany(mappedBy = "playlist", cascade = CascadeType.ALL)
-    private List<Musica> musicas;*/
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getDescricao() {
@@ -40,15 +49,6 @@ public class PlayList {
         this.descricao = descricao;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-/*
-
     public List<Musica> getMusicas() {
         return musicas;
     }
@@ -56,5 +56,4 @@ public class PlayList {
     public void setMusicas(List<Musica> musicas) {
         this.musicas = musicas;
     }
-*/
 }

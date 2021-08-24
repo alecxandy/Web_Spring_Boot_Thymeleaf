@@ -72,5 +72,4 @@ public class Musica {
     public void setPlaylist(PlayList playlist) {
         this.playlist = playlist;
     }
-
 }
