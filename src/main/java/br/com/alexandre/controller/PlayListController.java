@@ -27,14 +27,14 @@ public class PlayListController {
     }
 
     @GetMapping("/cadastro")
-    public String preSalvar(@ModelAttribute("templates/playlist") PlayList playlist) {
-        return "/templates/playlist/add";
+    public String preSalvar(@ModelAttribute("playlist") PlayList playlist) {
+        return "/playlist/add";
     }
 
     @PostMapping("/salvar")
-    public String salvar(@Valid @ModelAttribute("templates/playlist") PlayList playlist, BindingResult result, RedirectAttributes attr) {
+    public String salvar(@Valid @ModelAttribute("playlist") PlayList playlist, BindingResult result, RedirectAttributes attr) {
         if (result.hasErrors()) {
-            return "/templates/playlist/add";
+            return "/playlist/add";
         }
 
         playlistService.salvar(playlist);
@@ -45,14 +45,14 @@ public class PlayListController {
     @GetMapping("/{id}/atualizar")
     public ModelAndView preAtualizar(@PathVariable("id") long id, ModelMap model) {
         PlayList playlist = playlistService.recuperarPorId(id);
-        model.addAttribute("templates/playlist", playlist);
-        return new ModelAndView("/templates/playlist/add", model);
+        model.addAttribute("playlist", playlist);
+        return new ModelAndView("/playlist/add", model);
     }
 
     @PutMapping("/salvar")
-    public ModelAndView atualizar(@Valid @ModelAttribute("templates/playlist") PlayList playlist, BindingResult result, RedirectAttributes attr) {
+    public ModelAndView atualizar(@Valid @ModelAttribute("playlist") PlayList playlist, BindingResult result, RedirectAttributes attr) {
         if (result.hasErrors()) {
-            return new ModelAndView("/templates/playlist/add");
+            return new ModelAndView("/playlist/add");
         }
 
         playlistService.atualizar(playlist);
@@ -66,5 +66,6 @@ public class PlayListController {
         attr.addFlashAttribute("mensagem", "Playlist excluída com sucesso.");
         return "redirect:/playlists/listar";
     }
+
 
 }

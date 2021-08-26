@@ -1,5 +1,7 @@
 package br.com.alexandre.domain;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -22,7 +24,7 @@ public class PlayList {
     @Column(nullable = false)
     private String descricao;
 
-    @OneToMany(mappedBy = "playlist", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "playlist", cascade = CascadeType.MERGE)
     private List<Musica> musicas;
 
     public long getId() {

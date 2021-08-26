@@ -1,6 +1,7 @@
 package br.com.alexandre.service;
 
 import br.com.alexandre.dao.PlayListDAO;
+import br.com.alexandre.dao.PlayListDaoImp;
 import br.com.alexandre.domain.PlayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ import java.util.List;
 public class PlaylistServiceImp implements PlaylistService {
 
     @Autowired
-    private PlayListDAO playlistDao;
+    private PlayListDaoImp playlistDao;
 
     @Override
     public void salvar(PlayList playlist) {
