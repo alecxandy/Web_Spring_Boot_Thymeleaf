@@ -21,8 +21,11 @@ public class PlayListController {
     private PlaylistService playlistService;
 
     @GetMapping("/listar")
+    //
     public ModelAndView listar(ModelMap model) {
+        //Adicionando os atributo em uma estrutura de map (chave, valor)
         model.addAttribute("playlists", playlistService.recuperar());
+        //view que esta sendo enviada junto com um map e os valores do mesmo
         return new ModelAndView("/playlist/list", model);
     }
 
